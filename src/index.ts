@@ -1,30 +1,23 @@
-/**
- * Response format sent by api/posts endpoint
- */
-export type PostsResponse = Post[];
+export type { CommunitySqlAutoSave } from './references/community.reference';
+export type {
+  CommunityGetRes,
+  CommunityPostReq,
+} from './endpoints/community.endpoint';
 
-export interface Post {
-  /** general properties */
-  id: string; //uuid,
-  createdAt: string; // iso time,
+export type { CommentSqlAutoSave } from './references/comment.reference';
+export type { CommentSavePostReq } from './endpoints/comment.endpoint';
 
-  /** Post related properties */
-  postTitle: string;
-  postBody: string;
-  postSlug: string;
+export type { VoteSqlAutoSave } from './references/vote.reference';
+export type {
+  CommentVotePostReq,
+  PostVotePostReq,
+} from './endpoints/vote.endpoint';
 
-  /** Vote related properties */
-  voteCount: number;
+export type { UserSqlAutoSave } from './references/user.reference';
+export type { UserGetRes, UserPostReq } from './endpoints/user.endpoint';
 
-  /** comment related properties */
-  commentCount: number;
-  uniqueCommenterCount: number;
-
-  /** community related properties */
-  communitySlug: string;
-  communityName: string;
-
-  /** media related properties */
-  mediaImagePath: string; // uri
-  mediaType: 'image' | 'video' | 'none';
-}
+export type { PostGetRes, PostPostReq } from './endpoints/post.endpoint';
+export type {
+  PostSqlAutoSave,
+  PostStoreAutoSave,
+} from './references/post.reference';
