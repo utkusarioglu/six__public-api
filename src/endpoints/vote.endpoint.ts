@@ -4,7 +4,7 @@ import { CommentVoteSave, PostVoteSave } from '../references/vote.reference';
 /**
  * Receives the Votes cast by a specific post
  *
- * @endpoint POST /api/post/<post id>/vote/
+ * @endpoint POST /api/post/<post slug>/vote/
  */
 export type PostVotePostReq = {
   id: uuid;

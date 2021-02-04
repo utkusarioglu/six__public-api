@@ -27,6 +27,9 @@ interface Post {
   communitySlug: string;
   communityName: string;
 
+  /** Post creator related */
+  postCreatorUsername: string;
+
   /** media related properties */
   mediaImagePath: string; // uri
   mediaType: 'image' | 'video' | 'none';

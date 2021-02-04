@@ -6,9 +6,9 @@ import {
 import { uuid } from '../helpers/helpers';
 
 /**
- * Single post
+ * Get single post by its slug
  *
- * @endpoint GET /api/post/<post id>
+ * @endpoint GET /api/post/slug/<postSlug>
  */
 export type PostGetRes = {
   id: uuid;
@@ -28,7 +28,7 @@ export type PostsGetRes = {
 /**
  * All the comments on a single post
  *
- * @endpoint GET /api/post/<post id>/
+ * @endpoint GET /api/post/comments/<post id>/
  */
 export type PostCommentsGetRes = {
   id: uuid;

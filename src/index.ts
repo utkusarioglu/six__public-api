@@ -16,7 +16,11 @@ export type {
 export type { UserSqlAutoSave } from './references/user.reference';
 export type { UserGetRes, UserPostReq } from './endpoints/user.endpoint';
 
-export type { PostGetRes, PostPostReq } from './endpoints/post.endpoint';
+export type {
+  PostGetRes,
+  PostsGetRes,
+  PostPostReq,
+} from './endpoints/post.endpoint';
 export type {
   PostSqlAutoSave,
   PostStoreAutoSave,
