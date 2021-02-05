@@ -21,14 +21,13 @@ interface Post {
 
   /** comment related properties */
   commentCount: number;
-  uniqueCommenterCount: number;
 
   /** community related properties */
   communitySlug: string;
   communityName: string;
 
   /** Post creator related */
-  postCreatorUsername: string;
+  creatorUsername: string;
 
   /** media related properties */
   mediaImagePath: string; // uri
@@ -41,12 +40,7 @@ interface Post {
  */
 export type PostSqlAutoSave = Pick<
   Post,
-  | 'id'
-  | 'createdAt'
-  | 'likeCount'
-  | 'dislikeCount'
-  | 'commentCount'
-  | 'uniqueCommenterCount'
+  'id' | 'createdAt' | 'likeCount' | 'dislikeCount' | 'commentCount'
 >;
 
 /**
