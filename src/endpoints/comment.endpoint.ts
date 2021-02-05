@@ -14,7 +14,7 @@ export type CommentSavePostReq = {
 /**
  * Retrieves one comment
  *
- * @endpoint GET /api/comment/<comment id>
+ * @endpoint GET /api/post/slug/<post slug>/comments
  */
 export type CommentsGetRes = {
   id: uuid;

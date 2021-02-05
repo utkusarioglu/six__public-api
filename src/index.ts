@@ -25,3 +25,5 @@ export type {
   PostSqlAutoSave,
   PostStoreAutoSave,
 } from './references/post.reference';
+
+export type { CommentsGetRes } from './endpoints/comment.endpoint';
