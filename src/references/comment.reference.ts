@@ -1,4 +1,5 @@
 import type { PostGetRes } from '../endpoints/post.endpoint';
+import { UserGetRes } from '../endpoints/user.endpoint';
 
 /**
  * Complete comment object
@@ -38,4 +39,5 @@ export type CommentSaveReq = {
   // gets the post id from prior request for the post content,
   // which is sent through PostGetRes
   postId: PostGetRes['id'];
+  userId: UserGetRes['id'];
 } & CommentSave;
