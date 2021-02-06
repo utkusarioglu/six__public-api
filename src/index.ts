@@ -1,7 +1,7 @@
 export type { CommunitySqlAutoSave } from './references/community.reference';
 export type {
   CommunityGetRes,
-  CommunityPostReq,
+  CommunityCreatePostReq as CommunityPostReq,
 } from './endpoints/community.endpoint';
 
 export type { CommentSqlAutoSave } from './references/comment.reference';
@@ -27,7 +27,7 @@ export type {
 export type {
   PostGetRes,
   PostsGetRes,
-  PostPostReq,
+  PostCreatePostReq as PostPostReq,
 } from './endpoints/post.endpoint';
 export type {
   PostSqlAutoSave,

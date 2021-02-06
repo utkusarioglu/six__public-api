@@ -20,3 +20,13 @@ export type CommentVotePostReq = {
   id: uuid;
   req: CommentVoteSave;
 };
+
+/**
+ * Response to a CommentVotePostReq
+ *
+ * @endpoint POST /api/comment/<comment id>/vote
+ */
+export type CommentVotePostRes = {
+  id: uuid;
+  res: any; // TODO
+};

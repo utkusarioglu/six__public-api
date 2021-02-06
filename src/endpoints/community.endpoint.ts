@@ -40,7 +40,7 @@ export type CommunityPostsGetRes = {
  *
  * @endpoint POST /api/community/create
  */
-export type CommunityPostReq = {
+export type CommunityCreatePostReq = {
   id: uuid;
   req: CommunitySaveReq;
 };

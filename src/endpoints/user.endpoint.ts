@@ -38,6 +38,16 @@ export type UserSignupPostReq = {
 };
 
 /**
+ * Response to a UserSignupPostReq
+ *
+ * @endpoint POST /api/signup
+ */
+export type UserSignupPostRes = {
+  id: uuid;
+  res: any; // TODO
+};
+
+/**
  *
  * LOGIN
  *

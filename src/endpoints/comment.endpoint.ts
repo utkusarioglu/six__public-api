@@ -12,6 +12,16 @@ export type CommentSavePostReq = {
 };
 
 /**
+ * Return of new comment save post request
+ *
+ * @endpoint POST /api/<post id>/comment/new
+ */
+export type CommentSavePostRes = {
+  id: uuid;
+  res: any; // TODO
+};
+
+/**
  * Retrieves one comment
  *
  * @endpoint GET /api/post/slug/<post slug>/comments

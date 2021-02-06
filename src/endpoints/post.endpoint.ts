@@ -6,6 +6,12 @@ import {
 import { uuid } from '../helpers/helpers';
 
 /**
+ *
+ * POST
+ *
+ */
+
+/**
  * Get single post by its slug
  *
  * @endpoint GET /api/post/slug/<postSlug>
@@ -14,6 +20,12 @@ export type PostGetRes = {
   id: uuid;
   res: PostRes;
 };
+
+/**
+ *
+ * POSTS
+ *
+ */
 
 /**
  * List of all the available posts
@@ -40,7 +52,7 @@ export type PostCommentsGetRes = {
  *
  * @endpoint POST /api/post
  */
-export type PostPostReq = {
+export type PostCreatePostReq = {
   id: uuid;
   req: PostSave;
 };
