@@ -1,16 +1,19 @@
 import type { PostGetRes } from '../endpoints/post.endpoint';
 import { UserGetRes } from '../endpoints/user.endpoint';
+import { uuid } from '../helpers/helpers';
 
 /**
  * Complete comment object
  */
-interface Comment {
+export interface Comment {
   id: string; // uuid
-  parentId: string | null; // uuid
+  parentId: uuid | null; // uuid
   createdAt: string; // iso date
   body: string;
   likeCount: number; // uint
   dislikeCount: number; // uint
+  postSlug: string; //uuid
+  creatorUsername: string;
 }
 
 /**
