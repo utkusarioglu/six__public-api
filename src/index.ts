@@ -13,8 +13,16 @@ export type {
   PostVotePostReq,
 } from './endpoints/vote.endpoint';
 
-export type { UserSqlAutoSave } from './references/user.reference';
-export type { UserGetRes, UserPostReq } from './endpoints/user.endpoint';
+export type {
+  UserSqlAutoSave,
+  SuccessfulUserLoginRes,
+} from './references/user.reference';
+export type {
+  UserGetRes,
+  UserSignupPostReq,
+  UserLoginPostReq,
+  UserLoginPostRes,
+} from './endpoints/user.endpoint';
 
 export type {
   PostGetRes,

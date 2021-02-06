@@ -6,6 +6,8 @@ import {
   UserCommunityCreatorRes,
   UserCommentRes,
   UserSave,
+  UserLoginReq,
+  UserLoginRes,
 } from '../references/user.reference';
 import { uuid } from '../helpers/helpers';
 
@@ -20,14 +22,52 @@ export type UserGetRes = {
 };
 
 /**
+ *
+ * SIGNUP
+ *
+ */
+
+/**
  * Creates a user
  *
  * @endpoint POST /api/signup
  */
-export type UserPostReq = {
+export type UserSignupPostReq = {
   id: uuid;
   req: UserSave;
 };
+
+/**
+ *
+ * LOGIN
+ *
+ */
+
+/**
+ * Endpoint where the user logs in
+ *
+ * @endpoint POST /api/login
+ */
+export type UserLoginPostReq = {
+  id: uuid;
+  req: UserLoginReq;
+};
+
+/**
+ * Response to a user login request
+ *
+ * @endpoint POST /api/login
+ */
+export type UserLoginPostRes = {
+  id: uuid;
+  res: UserLoginRes;
+};
+
+/**
+ *
+ * OTHERS
+ *
+ */
 
 /**
  * Comments of a single user

@@ -14,6 +14,31 @@ interface User {
 }
 
 /**
+ * Login request required fields
+ */
+export type UserLoginReq = Pick<User, 'email' | 'password'>;
+
+/**
+ * Response to a login request
+ */
+export type UserLoginRes = SuccessfulUserLoginRes | FailedUserLoginRes;
+
+/**
+ * Response if the user login response is a success
+ */
+export type SuccessfulUserLoginRes = Omit<User, 'password'> & {
+  loggedIn: true;
+};
+
+/**
+ * Response if the user login response is a fail
+ */
+export type FailedUserLoginRes = {
+  error: true;
+  loggedIn: false;
+};
+
+/**
  * Properties of User that are auto filled by the sql engine
  */
 export type UserSqlAutoSave = Pick<User, 'id'>;
