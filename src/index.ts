@@ -2,6 +2,7 @@ export type { CommunitySqlAutoSave } from './references/community.reference';
 export type {
   CommunityGetRes,
   CommunityCreatePostReq as CommunityPostReq,
+  CommunitiesGetRes,
 } from './endpoints/community.endpoint';
 
 export type { VoteSqlAutoSave } from './references/vote.reference';
