@@ -17,11 +17,13 @@ export type {
   UserSqlAutoSave,
   SuccessfulUserLoginRes,
 } from './references/user.reference';
+
 export type {
   UserGetRes,
   UserSignupPostReq,
   UserLoginPostReq,
   UserLoginPostRes,
+  UserSignupPostRes,
 } from './endpoints/user.endpoint';
 
 export type {
@@ -29,6 +31,7 @@ export type {
   PostsGetRes,
   PostCreatePostReq as PostPostReq,
 } from './endpoints/post.endpoint';
+
 export type {
   PostSqlAutoSave,
   PostStoreAutoSave,
