@@ -12,6 +12,14 @@ import {
 import { uuid } from '../helpers/helpers';
 
 /**
+ * Getting session information for the current user
+ */
+export type UserSessionGetRes = {
+  id: uuid;
+  res: UserRes;
+};
+
+/**
  * Used for receiving details of a user that isn't the logged in user
  *
  * @endpoint GET /api/user/<username>
@@ -71,6 +79,29 @@ export type UserLoginPostReq = {
 export type UserLoginPostRes = {
   id: uuid;
   res: UserLoginRes;
+};
+
+/**
+ *
+ * LOGOUT
+ *
+ */
+
+/**
+ * Receives logout requests
+ *
+ * @endpoint POST /api/logout
+ */
+export type UserLogoutPostReq = {};
+
+/**
+ * Response to a logout request
+ */
+export type UserLogoutPostRes = {
+  id: 'some id';
+  res: {
+    loggedIn: boolean;
+  };
 };
 
 /**

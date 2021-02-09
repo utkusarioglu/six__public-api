@@ -22,6 +22,9 @@ export type {
   UserLoginPostReq,
   UserLoginPostRes,
   UserSignupPostRes,
+  UserSessionGetRes,
+  UserLogoutPostReq,
+  UserLogoutPostRes,
 } from './endpoints/user.endpoint';
 
 export type {
