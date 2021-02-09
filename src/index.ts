@@ -14,6 +14,7 @@ export type {
 export type {
   UserSqlAutoSave,
   SuccessfulUserLoginRes,
+  UserCommunitySubscriptionCreateReqParams,
 } from './references/user.reference';
 
 export type {
@@ -25,6 +26,11 @@ export type {
   UserSessionGetRes,
   UserLogoutPostReq,
   UserLogoutPostRes,
+  UserCommunitySubscriptionsGetRes,
+  UserCommunitySubscriptionCreatePostReq,
+  UserCommunitySubscriptionCreatePostRes,
+  UserCommunitySubscriptionRemovePostReq,
+  UserCommunitySubscriptionRemovePostRes,
 } from './endpoints/user.endpoint';
 
 export type {

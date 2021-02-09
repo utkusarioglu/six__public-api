@@ -8,6 +8,10 @@ import {
   UserSave,
   UserLoginReq,
   UserLoginRes,
+  UserCommunitySubscriptionCreateReq,
+  UserCommunitySubscriptionCreateRes,
+  UserCommunitySubscriptionRemoveReq,
+  UserCommunitySubscriptionRemoveRes,
 } from '../references/user.reference';
 import { uuid } from '../helpers/helpers';
 
@@ -141,6 +145,12 @@ export type UserCommentVotesGetRes = {
 };
 
 /**
+ *
+ * COMMUNITY SUBSCRIPTION
+ *
+ */
+
+/**
  * Subscriptions of a certain user to communities
  *
  * @endpint GET /api/user/<username>/subscriptions
@@ -149,6 +159,52 @@ export type UserCommunitySubscriptionsGetRes = {
   id: uuid;
   res: UserCommunitySubscriptionRes[];
 };
+
+/**
+ * Subscribes user to a new community
+ *
+ * @endpoint POST /api/user/<user id>/subscribe/<community id>
+ */
+export type UserCommunitySubscriptionCreatePostReq = {
+  id: uuid;
+  req: UserCommunitySubscriptionCreateReq;
+};
+
+/**
+ * Responds to a user community subscription request
+ *
+ * @endpoint POST /api/user/<user id>/subscribe/<community id>
+ */
+export type UserCommunitySubscriptionCreatePostRes = {
+  id: uuid;
+  res: UserCommunitySubscriptionCreateRes;
+};
+
+/**
+ * Unsubscribes user from a  community
+ *
+ * @endpoint POST /api/user/<user id>/unsubscribe/<community id>
+ */
+export type UserCommunitySubscriptionRemovePostReq = {
+  id: uuid;
+  req: UserCommunitySubscriptionRemoveReq;
+};
+
+/**
+ * Response to a user unsubscribing from a community
+ *
+ * @endpoint POST /api/user/<user id>/unsubscribe/<community id>
+ */
+export type UserCommunitySubscriptionRemovePostRes = {
+  id: uuid;
+  res: UserCommunitySubscriptionRemoveRes;
+};
+
+/**
+ *
+ * COMMUNITY CREATION
+ *
+ */
 
 /**
  * Communities that a certain user has created

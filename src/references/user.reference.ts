@@ -69,9 +69,40 @@ export type UserCommentVoteRes = VoteRes & {
 };
 
 /**
- * Community subscription of a user
+ * Community subscriptions of a user
  */
 export type UserCommunitySubscriptionRes = CommunityRes & {
+  userId: User['id'];
+};
+
+/**
+ * Body required for creating a new community subscription
+ */
+export type UserCommunitySubscriptionCreateReq = {};
+
+export type UserCommunitySubscriptionCreateReqParams = {
+  userId: User['id'];
+  communityId: CommunityRes['id'];
+};
+
+/**
+ * Response to a community subscription request
+ */
+export type UserCommunitySubscriptionCreateRes = {
+  communityId: CommunityRes['id'];
+  userId: User['id'];
+};
+
+/**
+ * Body required for removing a community subscription;
+ */
+export type UserCommunitySubscriptionRemoveReq = {};
+
+/**
+ * response to a community subscription removal
+ */
+export type UserCommunitySubscriptionRemoveRes = {
+  communityId: CommunityRes['id'];
   userId: User['id'];
 };
 
