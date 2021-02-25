@@ -22,7 +22,7 @@ export interface UserEndpoint {
     _v1: Post<
       '/signup/v1/:requestId',
       WithRequestId,
-      UserSignupReq,
+      UserSignupReq['Request'],
       UserSessionRes
     >;
   };
