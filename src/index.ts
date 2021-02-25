@@ -11,6 +11,7 @@ export type { UserEndpoint } from './endpoints/user.endpoint.types';
 export type {
   UserPipeline,
   SuccessfulUserLoginRes,
+  UserSessionRes,
 } from './references/user.reference.types';
 
 export type { PostEndpoint } from './endpoints/post.endpoint.types';
