@@ -5,13 +5,12 @@ import {
   WithCommentId,
   CommentRes,
 } from '../references/comment.reference.types';
-import { WithPostSlug } from '../references/post.reference.types';
 
 export interface CommentEndpoint {
   _save: {
     _v1: Post<
-      '/post/:postSlug/comment/create/:requestId',
-      WithPostSlug & WithRequestId,
+      '/comment/save/:requestId',
+      WithRequestId,
       CommentSaveSubRequest['Request'],
       CommentSaveSubRequest['Response']
     >;
