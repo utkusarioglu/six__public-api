@@ -4,6 +4,7 @@ import {
   PostCommentRes,
   PostSelect,
   PostSelectForCard,
+  WithPostId,
 } from '../references/post.reference.types';
 import { Get, Post as POST } from '../helpers/endpoint.types';
 import type { WithRequestId } from '../helpers/mixin.types';
@@ -30,10 +31,10 @@ export interface PostEndpoint {
     >;
   };
 
-  _post_comment: {
+  _comments: {
     _v1: Get<
-      '/post/comments/:postSlug/:requestId',
-      WithPostSlug & WithRequestId,
+      '/post/:postId/comments/:requestId',
+      WithPostId & WithRequestId,
       PostCommentRes[]
     >;
   };
