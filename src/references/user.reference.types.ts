@@ -82,7 +82,7 @@ export type SuccessfulUserLoginRes = BuildSelect<
   UserPipeline,
   'id' | 'username' | 'age' | 'email',
   {
-    loggedIn: true;
+    state: 'logged-in';
   }
 >['Select'];
 
@@ -90,7 +90,7 @@ export type SuccessfulUserLoginRes = BuildSelect<
  * Tells that the session is now a visitor session
  */
 export type VisitorSessionRes = {
-  loggedIn: false;
+  state: 'visitor';
 };
 
 /**
@@ -104,7 +104,7 @@ export type UserDetailsRes = BuildSelect<
   UserPipeline,
   'id' | 'username' | 'age' | 'email',
   {
-    loggedIn: true;
+    state: 'logged-in';
   }
 >['Select'];
 
