@@ -12,7 +12,7 @@ export interface CommentEndpoint {
       '/comment/save/:requestId',
       WithRequestId,
       CommentSaveSubRequest['Request'],
-      CommentSaveSubRequest['Response']
+      CommentRes
     >;
   };
 
