@@ -36,7 +36,8 @@ export type BuildSubRequest<
   Omitted: Omit<Pipeline['_request']['Out'], Native>;
   /**
    * Properties that shall be sent back as a response to the request.
-   *  Unless omits are defined, this object contains all the properties of the subrequest
+   * Unless omits are defined, this object contains all the properties of the
+   * sub request
    */
   Response: Omit<
     Pick<Pipeline['_request']['In'], Native> &

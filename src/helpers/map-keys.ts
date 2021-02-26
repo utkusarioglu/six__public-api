@@ -2,7 +2,7 @@
  * This monster renames the given keys with the string set as the value
  *
  * @example
- * type RenamedObject = Mapkeys<[object to rename], {
+ * type RenamedObject = MapKeys<[object to rename], {
  *  [key to rename]: [renamed key name]
  * }>
  */
