@@ -53,6 +53,8 @@ export type CommentRes = BuildSelect<
     userId: UserSelect['id'];
     creatorUsername: UserSelect['username'];
     postSlug: PostSelect['postSlug'];
+    // used for distinguishing comments that hasn't yet been recorded in the db
+    state: 'is-submitting' | 'submitted' | 'is-deleting' | 'deleted';
   },
   {
     created_at: 'createdAt';
