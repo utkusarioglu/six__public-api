@@ -28,7 +28,22 @@ export type CommunityPipeline = {
 /**
  * Properties of community that are sent to the client upon request
  */
-export type CommunitySelect = BuildSelect<CommunityPipeline>['Select'];
+export type CommunitySelect = BuildSelect<
+  CommunityPipeline,
+  | 'description'
+  | 'name'
+  | 'slug'
+  | 'id'
+  | 'created_at'
+  | 'post_count'
+  | 'subscriber_count',
+  {},
+  {
+    created_at: 'createdAt';
+    post_count: 'postCount';
+    subscriber_count: 'subscriberCount';
+  }
+>['Select'];
 
 /**
  * Properties of community that are auto-filled by the database
