@@ -73,12 +73,12 @@ export type UserSignupReq = BuildSubRequest<
 /**
  * Response to a login request
  */
-export type UserSessionRes = SuccessfulUserLoginRes | VisitorSessionRes;
+export type UserSessionRes = UserLoginResSuccessful | VisitorSessionRes;
 
 /**
  * Response if the user login response is a success
  */
-export type SuccessfulUserLoginRes = BuildSelect<
+export type UserLoginResSuccessful = BuildSelect<
   UserPipeline,
   'id' | 'username' | 'age' | 'email',
   {

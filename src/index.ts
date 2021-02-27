@@ -10,7 +10,7 @@ export type { VotePipeline } from './references/vote.reference.types';
 export type { UserEndpoint } from './endpoints/user.endpoint.types';
 export type {
   UserPipeline,
-  SuccessfulUserLoginRes,
+  UserLoginResSuccessful,
   UserSessionRes,
 } from './references/user.reference.types';
 
