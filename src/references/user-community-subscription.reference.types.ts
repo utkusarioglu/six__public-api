@@ -33,3 +33,10 @@ export type UserCommunitySubscriptionSelect = BuildSelect<
   {},
   { user_id: 'userId'; community_id: 'communityId' }
 >['Select'];
+
+export type UserCommunitySubscription_id_list_res = BuildSelect<
+  UserCommunitySubscriptionPipeline,
+  'community_id',
+  {},
+  { community_id: 'communityId' }
+>['Select']['communityId'][];

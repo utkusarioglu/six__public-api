@@ -16,6 +16,7 @@ import {
   WithCommunityId,
   CommunitySelect,
 } from '../references/community.reference.types';
+import type { UserCommunitySubscription_id_list_res } from '../references/user-community-subscription.reference.types';
 import type { WithRequestId } from '../helpers/mixin.types';
 
 /**
@@ -77,16 +78,16 @@ export interface UserEndpoint {
   };
 
   _user_community_subscription: {
-    _list: {
+    _id_list: {
       _v1: Get<
-        '/user/:username/subscriptions/:requestId',
-        WithUsername & WithRequestId,
-        CommunitySelect[]
+        '/user/:userId/subscriptions/id/:requestId',
+        WithUserId & WithRequestId,
+        UserCommunitySubscription_id_list_res
       >;
     };
     _alter: {
       _v1: Post<
-        'user/:userId/:actionType/:communityId/:requestId',
+        '/user/:userId/:actionType/:communityId/:requestId',
         WithUserId & WithCommunityId & WithCommunityActionTypes & WithRequestId,
         {},
         WithUserId & WithCommunityId & WithCommunityActionTypes
