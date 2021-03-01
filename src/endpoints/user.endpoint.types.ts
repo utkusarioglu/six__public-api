@@ -8,10 +8,14 @@ import {
   VisitorSessionRes,
   WithUsername,
   UserSignupReq,
+  WithUserId,
 } from '../references/user.reference.types';
 import { WithCommunityActionTypes } from '../references/community.reference.types';
 import { Get, Post } from '../helpers/endpoint.types';
-import { WithCommunityId } from '../references/community.reference.types';
+import {
+  WithCommunityId,
+  CommunitySelect,
+} from '../references/community.reference.types';
 import type { WithRequestId } from '../helpers/mixin.types';
 
 /**
@@ -77,18 +81,15 @@ export interface UserEndpoint {
       _v1: Get<
         '/user/:username/subscriptions/:requestId',
         WithUsername & WithRequestId,
-        UserCommunitySubscriptionRes[]
+        CommunitySelect[]
       >;
     };
     _alter: {
       _v1: Post<
-        'user/:username/:actionType/:communityId/:requestId',
-        WithUsername &
-          WithCommunityId &
-          WithCommunityActionTypes &
-          WithRequestId,
+        'user/:userId/:actionType/:communityId/:requestId',
+        WithUserId & WithCommunityId & WithCommunityActionTypes & WithRequestId,
         {},
-        UserCommunitySubscriptionCreateRes
+        WithUserId & WithCommunityId & WithCommunityActionTypes
       >;
     };
   };
@@ -98,7 +99,7 @@ export interface UserEndpoint {
       _v1: Get<
         '/user/:username/community-creations/:requestId',
         WithUsername & WithRequestId,
-        UserCommunityCreatorRes[]
+        CommunitySelect
       >;
     };
   };

@@ -46,11 +46,6 @@ export type CommunitySelect = BuildSelect<
 >['Select'];
 
 /**
- * Properties of community that are auto-filled by the database
- */
-export type CommunitySqlAutoSave = CommunityPipeline['_insert']['Joins'];
-
-/**
  * Properties of community that are required to be submitted by the user
  * to create a new community
  */

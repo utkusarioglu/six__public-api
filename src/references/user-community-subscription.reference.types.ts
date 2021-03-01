@@ -27,4 +27,9 @@ export type UserCommunitySubscriptionPipeline = {
   >;
 };
 
-export type UserCommunitySubscriptionSelect = BuildSelect<UserCommunitySubscriptionPipeline>['Select'];
+export type UserCommunitySubscriptionSelect = BuildSelect<
+  UserCommunitySubscriptionPipeline,
+  'user_id' | 'community_id' | 'id',
+  {},
+  { user_id: 'userId'; community_id: 'communityId' }
+>['Select'];
