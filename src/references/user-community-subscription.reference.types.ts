@@ -48,6 +48,6 @@ export type WithUCSId = BuildSelect<
   { id: 'ucsId' }
 >['Select'];
 
-export type WithNullableUCSId = {
-  ucsId: WithUCSId['ucsId'] | null;
+export type WithHasUcs = {
+  ucs: boolean;
 };

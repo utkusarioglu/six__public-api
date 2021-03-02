@@ -1,7 +1,7 @@
 import { isoDate, uint, uuid } from '../helpers/alias.types';
 import { DataNode } from '../helpers/data-node';
 import { BuildSelect } from '../helpers/select.types';
-import type { WithNullableUCSId } from './user-community-subscription.reference.types';
+import type { WithHasUcs } from './user-community-subscription.reference.types';
 
 export type CommunityPipeline = {
   _request: DataNode<{
@@ -70,7 +70,7 @@ export type CommunityWithSubscriptionStatus = BuildSelect<
   | 'created_at'
   | 'post_count'
   | 'subscriber_count',
-  WithNullableUCSId,
+  WithHasUcs,
   {
     created_at: 'createdAt';
     post_count: 'postCount';
