@@ -40,3 +40,14 @@ export type UserCommunitySubscription_id_list_res = BuildSelect<
   {},
   { community_id: 'communityId' }
 >['Select']['communityId'][];
+
+export type WithUCSId = BuildSelect<
+  UserCommunitySubscriptionPipeline,
+  'id',
+  {},
+  { id: 'ucsId' }
+>['Select'];
+
+export type WithNullableUCSId = {
+  ucsId: WithUCSId['ucsId'] | null;
+};

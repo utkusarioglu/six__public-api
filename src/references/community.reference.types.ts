@@ -1,6 +1,7 @@
 import { isoDate, uint, uuid } from '../helpers/alias.types';
 import { DataNode } from '../helpers/data-node';
 import { BuildSelect } from '../helpers/select.types';
+import type { WithNullableUCSId } from './user-community-subscription.reference.types';
 
 export type CommunityPipeline = {
   _request: DataNode<{
@@ -52,15 +53,51 @@ export type CommunitySelect = BuildSelect<
 export type CommunitySaveReq = CommunityPipeline['_request']['In'];
 
 /**
- * Properties send to the client when a post that is associated with a community
- * is requested
- */
-export type CommunityPostRes = CommunitySelect & WithCommunityId;
-
-/**
  * Action types a user can take against a community
  */
 export type CommunityActionTypes = 'subscribe' | 'unsubscribe';
+
+/**
+ * Includes ucsId, which is the subscription id for the community, if one
+ * exists
+ */
+export type CommunityWithSubscriptionStatus = BuildSelect<
+  CommunityPipeline,
+  | 'description'
+  | 'name'
+  | 'slug'
+  | 'id'
+  | 'created_at'
+  | 'post_count'
+  | 'subscriber_count',
+  WithNullableUCSId,
+  {
+    created_at: 'createdAt';
+    post_count: 'postCount';
+    subscriber_count: 'subscriberCount';
+  }
+>['Select'];
+
+/**
+ * Returns JS naming convention properties for posts of a single
+ * community. Does not include ucsId
+ */
+export type CommunityForCommunityPost = BuildSelect<
+  CommunityPipeline,
+  | 'description'
+  | 'name'
+  | 'slug'
+  | 'id'
+  | 'created_at'
+  | 'post_count'
+  | 'subscriber_count',
+  {},
+  {
+    created_at: 'createdAt';
+    post_count: 'postCount';
+    subscriber_count: 'subscriberCount';
+  }
+>['Select'];
 
 /**
  * MIXINS
