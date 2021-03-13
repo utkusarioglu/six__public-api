@@ -17,3 +17,8 @@ export type uint = number;
  * String literal for mime types
  */
 export type mimetype = string;
+
+/**
+ * Record with 'any' entries
+ */
+export type RecordAny = Record<keyof any, any>;
