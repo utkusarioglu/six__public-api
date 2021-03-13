@@ -1,33 +1,31 @@
-import {
-  UserCommentVoteRes,
-  UserDetailsRes,
-  UserPostVoteRes,
+import type {
   UserCommentRes,
   UserLoginSubRequest,
   UserSessionRes,
   VisitorSessionRes,
   WithUsername,
-  UserSignupReq,
+  UserLoginResSuccessful,
   WithUserId,
-} from '../references/user.reference.types';
-import { WithCommunityActionTypes } from '../references/community.reference.types';
-import { Get, Post } from '../helpers/endpoint.types';
-import {
+  UserPlRequestIn,
+} from '../refs/user.ref.types';
+import type { WithCommunityActionTypes } from '../refs/community.ref.types';
+import type { Get, Post } from '../helpers/endpoint.types';
+import type {
   WithCommunityId,
   CommunitySelect,
-} from '../references/community.reference.types';
-import type { UserCommunitySubscription_id_list_res } from '../references/user-community-subscription.reference.types';
+} from '../refs/community.ref.types';
 import type { WithRequestId } from '../helpers/mixin.types';
+import { uuid } from '../helpers/alias.types';
 
 /**
  * User related types all together. Let's see if this works
  */
-export interface UserEndpoint {
+export interface UserEp {
   _signup: {
     _v1: Post<
       '/signup/v1/:requestId',
       WithRequestId,
-      UserSignupReq['Request'],
+      UserPlRequestIn,
       UserSessionRes
     >;
   };
@@ -36,7 +34,7 @@ export interface UserEndpoint {
     _v1: Post<
       '/login/v1/:requestId',
       WithRequestId,
-      UserLoginSubRequest['Request'],
+      UserLoginSubRequest,
       UserSessionRes
     >;
   };
@@ -50,12 +48,16 @@ export interface UserEndpoint {
   };
 
   _details: {
-    _v1: Get<'/user/v1/:username/:requestId', WithRequestId, UserDetailsRes>;
+    _v1: Get<
+      '/user/v1/:username/:requestId',
+      WithRequestId,
+      UserLoginResSuccessful
+    >;
   };
 
   _user_comments: {
     _v1: Get<
-      '/user/:username/comments/:requestId',
+      '/user/:username/comments/v1/:requestId',
       WithUsername & WithRequestId,
       UserCommentRes
     >;
@@ -63,33 +65,34 @@ export interface UserEndpoint {
 
   _user_post_vote: {
     _v1: Get<
-      '/user/:username/post-votes/:requestId',
+      '/user/:username/post-votes/v1/:requestId',
       WithUsername & WithRequestId,
-      UserPostVoteRes[]
+      UserPostVoteSelect[]
     >;
   };
 
   _user_comment_vote: {
     _v1: Get<
-      '/user/:username/comment-votes/:requestId',
+      '/user/:username/comment-votes/v1/:requestId',
       WithUsername & WithRequestId,
-      UserCommentVoteRes[]
+      UserCommentVoteSelect[]
     >;
   };
 
   _user_community_subscription: {
     _id_list: {
       _v1: Get<
-        '/user/:userId/subscriptions/id/:requestId',
+        '/user/:userId/subscriptions/id/v1/:requestId',
         WithUserId & WithRequestId,
-        UserCommunitySubscription_id_list_res
+        uuid[]
       >;
     };
-    _alter: {
+
+    _ucs: {
       _v1: Post<
-        '/user/:userId/:actionType/:communityId/:requestId',
-        WithUserId & WithCommunityId & WithCommunityActionTypes & WithRequestId,
-        {},
+        '/user/ucs/:requestId',
+        WithRequestId,
+        WithUserId & WithCommunityId & WithCommunityActionTypes,
         WithUserId & WithCommunityId & WithCommunityActionTypes
       >;
     };
@@ -98,7 +101,7 @@ export interface UserEndpoint {
   _user_community_creator: {
     _list: {
       _v1: Get<
-        '/user/:username/community-creations/:requestId',
+        '/user/:username/community-creations/v1/:requestId',
         WithUsername & WithRequestId,
         CommunitySelect
       >;
