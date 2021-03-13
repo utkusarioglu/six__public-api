@@ -1,4 +1,4 @@
-import { WithId, WithError } from './mixin.types';
+import type { WithId, WithError } from './mixin.types';
 
 /**
  * Mixin for response success state

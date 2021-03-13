@@ -1,4 +1,4 @@
-import { uuid } from './alias.types';
+import type { uuid } from './alias.types';
 
 /**
  * MIXINS
