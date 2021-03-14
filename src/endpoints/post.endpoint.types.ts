@@ -31,7 +31,7 @@ export interface PostEp {
       '/post/v1/:requestId',
       WithRequestId,
       PostPlRequestIn,
-      PostSelect
+      PostSelectForCard
     >;
   };
 
