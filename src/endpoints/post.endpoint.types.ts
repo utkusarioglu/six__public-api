@@ -28,7 +28,7 @@ export interface PostEp {
 
   _create: {
     _v1: POST<
-      '/post/v1/:requestId',
+      '/post/create/v1/:requestId',
       WithRequestId,
       PostPlRequestIn,
       PostSelectForCard
