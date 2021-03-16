@@ -4,9 +4,7 @@ import type {
   CommunityWithSubscriptionStatus,
   CommunityForCommunityPost,
 } from '../refs/community.ref.types';
-import type {
-  PostSelectForCard,
-} from '../refs/post.ref.types';
+import type { PostSelectForCard } from '../refs/post.ref.types';
 import type { Get, Post } from '../helpers/endpoint.types';
 import type { WithRequestId } from '../helpers/mixin.types';
 
@@ -32,7 +30,7 @@ export interface CommunityEp {
       '/community/create/v1/:requestId',
       WithRequestId,
       CommunitySaveReq,
-      CommunitySaveReq
+      CommunityWithSubscriptionStatus
     >;
   };
 
