@@ -19,7 +19,7 @@ export interface CommunityEp {
 
   _list: {
     _v1: Get<
-      '/communities/v1/:requestId',
+      '/community/list/v1/:requestId',
       WithRequestId,
       CommunityWithSubscriptionStatus[]
     >;
