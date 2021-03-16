@@ -1,7 +1,6 @@
 import type {
   WithPostSlug,
   PostCommentRes,
-  PostSelect,
   PostSelectForCard,
   WithPostId,
   PostVoteResponse,
@@ -10,8 +9,6 @@ import type { Get, Post as POST } from '../helpers/endpoint.types';
 import type { WithRequestId } from '../helpers/mixin.types';
 import type { PostPlRequestIn } from '../refs/post.ref.types';
 import type { PostVotePlRequestIn } from '../refs/post-vote.ref.types';
-import { uuid } from '../helpers/alias.types';
-import { VoteTypes } from '../refs/vote.ref.types';
 
 export interface PostEp {
   _single: {

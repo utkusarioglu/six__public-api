@@ -4,6 +4,9 @@ import type {
   CommunityWithSubscriptionStatus,
   CommunityForCommunityPost,
 } from '../refs/community.ref.types';
+import type {
+  PostSelectForCard,
+} from '../refs/post.ref.types';
 import type { Get, Post } from '../helpers/endpoint.types';
 import type { WithRequestId } from '../helpers/mixin.types';
 
@@ -33,13 +36,11 @@ export interface CommunityEp {
     >;
   };
 
-  _community_post: {
-    _list: {
-      _v1: Get<
-        '/community/v1/:communitySlug/post/:requestId',
-        WithCommunitySlug & WithRequestId,
-        CommunityForCommunityPost[]
-      >;
-    };
+  _community_posts: {
+    _v1: Get<
+      '/community/posts/v1/:communitySlug/:requestId',
+      WithCommunitySlug & WithRequestId,
+      PostSelectForCard[]
+    >;
   };
 }
