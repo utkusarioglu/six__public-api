@@ -14,7 +14,6 @@ export type CommunitySaveReq = {
   description: string;
   name: string;
   slug: string;
-  userId: uuid;
 };
 
 /**
