@@ -1,5 +1,5 @@
-import type { WithPostId } from '../refs/post.ref.types';
-import type { WithUserId } from '../refs/user.ref.types';
+import type { WithPostId } from './post.ref.types';
+import type { WithUserId } from './user.ref.types';
 import type { uint, uuid } from '../helpers/alias.types';
 
 export type CommentRes = {
